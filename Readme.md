@@ -48,3 +48,68 @@ WebAutomationFramework is designed to streamline web application testing by prov
 - **Cloud Execution** - Execute tests on remote cloud infrastructure
 
 ## 🏗️ Architecture
+WebAutomationFramework/ ├── src/ │ ├── main/ │ │ └── java/ │ │ └── com/automation/ │ │ ├── base/ # Base test classes │ │ ├── utils/ # Utility classes for data reading, reporting │ │ ├── pages/ # Page Object Model classes │ │ ├── listeners/ # TestNG listeners │ │ └── config/ # Configuration management │ │ │ └── test/ │ └── java/ │ └── com/automation/ │ └── tests/ # Test classes │ ├── resources/ │ ├── config/ # Configuration files │ ├── testdata/ │ │ ├── *.csv # CSV test data │ │ ├── *.xlsx # Excel test data │ │ └── *.json # JSON test data │ ├── reports/ # Generated test reports │ └── screenshots/ # Failure screenshots │ ├── testng.xml # TestNG configuration └── pom.xml # Maven dependencies
+
+
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Java 8 or higher
+- Maven 3.6+
+- Browser drivers (ChromeDriver, GeckoDriver, etc.) or use WebDriverManager
+
+### Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/njwala/WebAutomationFramework.git
+   cd WebAutomationFramework
+
+
+
+2.Install Dependencies
+
+bash
+mvn clean install
+
+3.Configure Test Data
+
+Add your test data files in resources/testdata/
+Update configuration files in resources/config/
+
+
+Running Tests
+From IDE
+           Right-click on testng.xml and select "Run as TestNG Suite"
+From Command Line
+
+# Run all tests
+mvn clean test
+
+# Run specific test class
+mvn clean test -Dtest=YourTestClass
+
+# Run specific test method
+mvn clean test -Dtest=YourTestClass#testMethod
+
+# Run with specific configuration
+mvn clean test -Denvironment=staging -Dbrowser=chrome -Dheadless=true
+
+#Headless Mode
+  bash
+mvn clean test -Dheadless=true
+
+#Parallel Execution
+Configure in testng.xml:
+   <suite name="AutomationSuite" parallel="methods" thread-count="5">
+    ...
+</suite>
+
+
+📊 Data Sources Usage
+   CSV Files
+       Java
+   List<String[]> testData = DataUtils.readCSV("testdata/users.csv");
+
+
