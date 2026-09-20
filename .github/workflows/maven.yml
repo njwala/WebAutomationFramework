@@ -41,3 +41,7 @@ jobs:
 
       - name: Upload execution status
         run: echo "Test execution completed!"
+
+      - name: List resources
+        run: ls -R src/test/resources
+
