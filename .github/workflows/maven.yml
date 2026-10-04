@@ -32,16 +32,61 @@ jobs:
           name: Test logs
           path: logs/
 
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots/
+
       - name: Upload test reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Test reports
-          path: report.html
+          name: html-report
+          path: reports/
 
       - name: Upload execution status
         run: echo "Test execution completed!"
 
+      - name: Copy Report to gh-pages folder
+        if: always()
+        run: |
+          mkdir -p public/extent-reports
+          if [ -d "reports" ]; then
+          cp -R reports/* public/extent-reports/
+          echo "✓ Reports copied"
+          else
+          echo "✗ Reports folder not found"
+          fi
+
+          if [ -d "logs" ]; then
+          cp -R logs public/extent-reports/
+          echo "✓ Logs copied"
+          else
+          echo "✗ Logs folder not found"
+          fi
+          if [ -d "screenshots" ]; then
+          if [ "$(ls -A screenshots 2>/dev/null)" ]; then
+          cp -R screenshots public/extent-reports/
+          echo "✓ Screenshots copied"
+          else
+          echo "⚠ Screenshots folder is empty"
+          fi
+          else
+          echo "⚠ Screenshots folder not found (expected for passing tests)"
+          fi
+
+          echo "Final content:"
+          ls -R public/extent-reports/
+
       - name: List resources
         run: ls -R src/test/resources
 
+      - name: Deploy
+        if: always()
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: public/extent-reports/
+          token: ${{ secrets.PAT_1 }}
+          clean: true
