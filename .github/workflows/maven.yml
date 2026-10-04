@@ -53,19 +53,31 @@ jobs:
         if: always()
         run: |
           mkdir -p public/extent-reports
-
           if [ -d "reports" ]; then
-            cp -R reports/* public/extent-reports/
+          cp -R reports/* public/extent-reports/
+          echo "✓ Reports copied"
+          else
+          echo "✗ Reports folder not found"
           fi
 
           if [ -d "logs" ]; then
-            cp -R logs public/extent-reports/
+          cp -R logs public/extent-reports/
+          echo "✓ Logs copied"
+          else
+          echo "✗ Logs folder not found"
+          fi
+          if [ -d "screenshots" ]; then
+          if [ "$(ls -A screenshots 2>/dev/null)" ]; then
+          cp -R screenshots public/extent-reports/
+          echo "✓ Screenshots copied"
+          else
+          echo "⚠ Screenshots folder is empty"
+          fi
+          else
+          echo "⚠ Screenshots folder not found (expected for passing tests)"
           fi
 
-          if [ -d "screenshots" ] && [ "$(ls -A screenshots)" ]; then
-            cp -R screenshots public/extent-reports/
-          fi
-
+          echo "Final content:"
           ls -R public/extent-reports/
 
       - name: List resources
