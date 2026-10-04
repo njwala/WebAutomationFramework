@@ -120,6 +120,14 @@ public abstract class BrowserUtility {
 		String path = "./screenshots/"+ name + " - " + timestamp + ".png";//always use relative path for screenshots to be accessible in github actions environment
 				//System.getProperty("user.dir")+ "//screenshots//"+ "-" + timestamp + "-" +name+".png"; // this local path needs to be changed 
 		//as while running via gihub actions, the path is not accessible. So, we need to change the path to a relative path or a path that is accessible in the github actions environment.
+		
+		// Create screenshots directory if it doesn't exist
+				File screenshotDir = new File("./screenshots");
+				if (!screenshotDir.exists()) {
+					screenshotDir.mkdirs();
+					logger.info("Screenshots directory created at: " + screenshotDir.getAbsolutePath());
+				}
+		
 		File screenshotFile= new File(path);
 		try {
 			FileUtils.copyFile(screenshotData, screenshotFile);
