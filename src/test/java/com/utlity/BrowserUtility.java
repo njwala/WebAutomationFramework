@@ -117,7 +117,9 @@ public abstract class BrowserUtility {
 		Date  date = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
 		String timestamp =  formatter.format(date);
-		String path = System.getProperty("user.dir")+ "//screenshots//"+ "-" + timestamp + "-" +name+".png";
+		String path = "./screenshots/"+ name + " - " + timestamp + ".png";//always use relative path for screenshots to be accessible in github actions environment
+				//System.getProperty("user.dir")+ "//screenshots//"+ "-" + timestamp + "-" +name+".png"; // this local path needs to be changed 
+		//as while running via gihub actions, the path is not accessible. So, we need to change the path to a relative path or a path that is accessible in the github actions environment.
 		File screenshotFile= new File(path);
 		try {
 			FileUtils.copyFile(screenshotData, screenshotFile);

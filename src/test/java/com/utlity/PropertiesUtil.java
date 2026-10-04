@@ -12,7 +12,8 @@ public class PropertiesUtil {
 	// read properties file
 
 	public static String readPropterty(Env env, String propertyName) {
-		File propfile = new File(System.getProperty("user.dir") + "\\config\\" +env+".properties");
+		//File propfile = new File(System.getProperty("user.dir") + "\\config\\" +env+".properties"); //baclward slash is not identified by linux bases github actions runner, so use forward slash
+		File propfile = new File(System.getProperty("user.dir") + "//config//" +env+".properties");
 		FileReader readFile = null;
 		Properties properties = new Properties();
 		try {

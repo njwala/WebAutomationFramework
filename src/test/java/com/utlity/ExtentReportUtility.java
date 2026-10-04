@@ -13,7 +13,8 @@ public class ExtentReportUtility {
 
 	public static void setupSparkReporter(String reportName) {
 		ExtentSparkReporter sparkReporter;// purpose- provide functionality to create the report and configure it[look,style]
-		sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "//reports//"+ reportName);// create the report file in the reports folder
+		//sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "//reports//"+ reportName);// create the report file in the reports folder
+		sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\reports\\"+ reportName);
 		extentReports = new ExtentReports();
 		extentReports.attachReporter(sparkReporter);// tell extent report to use this reporter to generate the report
 	}

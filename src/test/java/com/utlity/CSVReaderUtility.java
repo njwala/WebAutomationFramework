@@ -24,7 +24,8 @@ public class CSVReaderUtility {
 		User userData;
 
 		try {
-			csvfile = new File(System.getProperty("user.dir") + "\\testData\\" +fileName);
+			//csvfile = new File(System.getProperty("user.dir") + "\\testData\\" +fileName);
+			csvfile = new File(System.getProperty("user.dir") + "//testData//" +fileName);
 			fileReader = new FileReader(csvfile);
 			csvReader = new CSVReader(fileReader);
 			csvReader.readNext(); // reading the column name- row1 // keepiing this as i need to skip the column name row
