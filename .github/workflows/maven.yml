@@ -51,12 +51,20 @@ jobs:
 
       - name: Copy Report to gh-pages folder
         if: always()
-       
         run: |
           mkdir -p public/extent-reports
-          cp -R report.html public/extent-reports/
-          cp -R screenshots/ public/extent-reports/screenshots/
-          ls -l
+
+          if [ -f "report.html" ]; then
+            cp report.html public/extent-reports/
+          elif [ -d "target/surefire-reports" ]; then
+            cp -R target/surefire-reports public/extent-reports/
+          fi
+
+          if [ -d "screenshots" ]; then
+            cp -R screenshots/ public/extent-reports/screenshots/
+          fi
+
+          ls -R public/extent-reports/
              
       - name: List resources
         run: ls -R src/test/resources
