@@ -1,0 +1,27 @@
+2026-10-04-12:10:55 [main] ERROR  com.ui.listerners.TestListener Test suite execution started 
+2026-10-04-12:10:04 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.HomePage BrowserUtility initialized with WebDriver instance 
+2026-10-04-12:10:04 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.HomePage Launching the browser with URL: https://automationpractice.techwithjatin.com/ 
+2026-10-04-12:10:09 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.HomePage Initializing the browser: CHROME 
+2026-10-04-12:10:18 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.HomePage Driver set in thread: 19 
+2026-10-04-12:10:18 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.HomePage Browser initialized successfully: CHROME 
+2026-10-04-12:10:18 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.HomePage Launching the browser with URL: https://automationpractice.techwithjatin.com/ 
+2026-10-04-12:10:22 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.HomePage Maximizing the browser window 
+2026-10-04-12:10:22 [TestNG-test-UI Automation Test-1] INFO  com.ui.tests.LoginTest3 Homepage is loaded 
+2026-10-04-12:10:22 [TestNG-test-UI Automation Test-1] INFO  com.ui.tests.LoginTest3 Setup called, homePage = com.ui.pages.HomePage@5985c116 
+2026-10-04-12:10:22 [TestNG-test-UI Automation Test-1] INFO  com.ui.listerners.TestListener logonExcelTest 
+2026-10-04-12:10:22 [TestNG-test-UI Automation Test-1] INFO  com.ui.listerners.TestListener logs in with email and password from csv file 
+2026-10-04-12:10:22 [TestNG-test-UI Automation Test-1] INFO  com.ui.listerners.TestListener [e2e, sanity] 
+2026-10-04-12:10:22 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.HomePage Clicking on Signin link 
+2026-10-04-12:10:22 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.HomePage Clicking on element located 
+2026-10-04-12:10:23 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.HomePage Clicked on element 
+2026-10-04-12:10:23 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.LoginPage BrowserUtility initialized with WebDriver instance 
+2026-10-04-12:10:23 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.LoginPage Entering text: tester@test.com 
+2026-10-04-12:10:23 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.LoginPage Entered text: tester@test.com 
+2026-10-04-12:10:23 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.LoginPage Entering text: tester 
+2026-10-04-12:10:23 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.LoginPage Entered text: tester 
+2026-10-04-12:10:23 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.LoginPage Clicking on element located 
+2026-10-04-12:10:23 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.LoginPage Clicked on element 
+2026-10-04-12:10:23 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.MyAccountPage BrowserUtility initialized with WebDriver instance 
+2026-10-04-12:10:24 [TestNG-test-UI Automation Test-1] INFO  com.ui.pages.MyAccountPage Getting visible text from element located 
+2026-10-04-12:10:24 [TestNG-test-UI Automation Test-1] INFO  com.ui.listerners.TestListener logonExcelTest is passed 
+2026-10-04-12:10:25 [main] ERROR  com.ui.listerners.TestListener Test suite execution finished 
